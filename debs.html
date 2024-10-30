@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .quote-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            transition: transform 0.2s;
+        }
+
+        .quote-card:hover {
+            transform: scale(1.05);
+        }
+
+        .quote {
+            font-size: 1.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .author {
+            font-size: 1.2em;
+            color: #555;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quote-card">
+        <div class="quote" id="quote">"The only limit to our realization of tomorrow is our doubts of today."</div>
+        <div class="author" id="author">- Franklin D. Roosevelt</div>
+        <button onclick="newQuote()">New Quote</button>
+    </div>
+
+    <script>
+        const quotes = [
+            {
+                quote: "The only limit to our realization of tomorrow is our doubts of today.",
+                author: "Franklin D. Roosevelt"
+            },
+            {
+                quote: "Life is 10% what happens to us and 90% how we react to it.",
+                author: "Charles R. Swindoll"
+            },
+            {
+                quote: "The best way to predict the future is to create it.",
+                author: "Peter Drucker"
+            },
+            {
+                quote: "You miss 100% of the shots you don’t take.",
+                author: "Wayne Gretzky"
+            },
+            {
+                quote: "It does not matter how slowly you go as long as you do not stop.",
+                author: "Confucius"
+            }
+        ];
+
+        function newQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote').innerText = quotes[randomIndex].quote;
+            document.getElementById('author').innerText = quotes[randomIndex].author;
+        }
+    </script>
+
+</body>
+
+</html>
