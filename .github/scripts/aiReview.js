@@ -1,6 +1,6 @@
 import { Octokit } from "octokit";
 import OpenAI from "openai";
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
