@@ -2,7 +2,7 @@ name: AI Code Review
 
 on:
   push:
-    branches: [main] # Uniquement pour les push sur main
+    branches: [master] # Uniquement pour les push sur main
 
 jobs:
   review:
