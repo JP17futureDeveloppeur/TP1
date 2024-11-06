@@ -1,5 +1,6 @@
 import { Octokit } from "octokit";
 import OpenAI from "openai";
+import fetch from "node-fetch";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -7,6 +8,7 @@ const openai = new OpenAI({
 
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
+  request: { fetch },
 });
 
 // Fonction simplifiée pour obtenir les informations du dépôt
